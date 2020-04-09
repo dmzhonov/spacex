@@ -1,3 +1,17 @@
+@font-face {
+	font-family: "Museo"; 
+	src: url("MuseoSansCyrl-100.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+@font-face {
+	font-family: "MuseoBold"; 
+	src: url("MuseoSansCyrl-700.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
 * {
 	font-family: Museo;
     font-size: 18px;
@@ -13,82 +27,105 @@ body {
 
 .top, .footer {
 	background-image: url('pics/space_bg.png');
-}
-
-.top, .footer {
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-color: black;
 }
-#logoWrapper {
-	height: 100%;
-	max-height: 99px;
-	line-height: 89px;
-	border-width: 0 1px 0 1px;
-	border-style: solid;
-	border-color:  #c6c6c680;
-	padding: 0 20px;
-}
-#logoWrapper img {
-	vertical-align: unset;
-	width: 100%;
-}
+
 .content {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-image: url('pics/main_bg.png');
 	padding: 70px 0;
 }
 
-#menu {
-    height: 100px;
-    background-color: #150a012e;
-    border-bottom: 1px solid #c6c6c680;
-    border-top: 1px solid #c6c6c680;
-}
+/*меню*/
+	#menu {
+	    /*width: 1920px;*/
+	    max-height: 100px;
+	    background-color: #150a012e;
+	    border-bottom: 1px solid #2e3034;
+	    border-top: 1px solid #2e3034;
+	}
 
-#menu a span {
-	transition: 0.5s 0s ease all;
-	border-bottom: 1px solid transparent;
-}
+	#menu a span {
+		transition: 0.5s 0s ease all;
+		border-bottom: 1px solid transparent;
+	}
 
-#menu a:hover span {
-	transition: 0.5s 0s ease all;
-	opacity: 0.7;
-	border-bottom: 1px solid #c6c6c680;
-}
+	#menu a:hover span {
+		transition: 0.5s 0s ease all;
+		opacity: 0.7;
+		border-bottom: 1px solid #c6c6c680;
+	}
 
-#travel, #m-travel button {
-    font-size: 14px;
-    width: 180px;
-    height: 35px;
-    background-color: rgba(22,21,29,0.5);
-    border: 1px inset #1C6EA4;
-    border-image: linear-gradient(10deg, rgb(51, 93, 153), rgba(161, 161, 161, 0), rgb(51, 93, 153));
-    border-image-slice: 1;
-    position: relative;
-	top: 60%;
-	left: 10%;
-	transition: 0.5s 0s ease all;
-}
+	.navbar-toggler-icon {
+		font-size: 28px;
+		line-height: 18px;
+		height: 1em;
+		width: 1em;
+		font-weight: lighter;
+	}
 
-#travel:hover {
-	background-color: rgba(255, 255, 225, 0.5);
-	transition: 0.5s 0s ease all;
-}
+	/*bootstrap fix lol*/
+	[aria-expanded="true"] {
+		display: block !important;
+	}
 
-.content {
-	background-image: url('pics/main_bg.png');
-}
+/*логотип*/
+	#logoWithCorners {
+		position: relative;
+		height: 100%;
+		max-height: 99px;
+		border-width: 0 1px 0 1px;
+		border-style: solid;
+		border-color:  #2e3034;
+	}
 
+	#logoWrapper {
+		height: 100%;
+		line-height: 89px;
+		padding: 0 20px;
+	}
+	#logoWrapper img {
+		vertical-align: unset;
+		width: 100%;
+	}
 
-@font-face {
-	font-family: "Museo"; 
-	src: url("MuseoSansCyrl-100.ttf") format("truetype"); 
-	font-style: normal; 
-	font-weight: normal; 
-}
+/*кнопки*/
+	#travel, #m-travel button {
+	    width: 180px;
+	    height: 35px;
+	    background-color: rgba(22,21,29,0.5);
+	    border: 1px inset #1C6EA4;
+	    border-image: linear-gradient(10deg, rgb(51, 93, 153), rgba(161, 161, 161, 0), rgb(51, 93, 153));
+	    border-image-slice: 1;
+	    position: relative;
+		top: 60%;
+		left: 10%;
+		transition: 0.5s 0s ease all;
+		padding: 0;
+	}
+	#travel * {
+		font-size: 14px;
+	}
+
+	#travel:hover {
+		background-color: rgba(255, 255, 225, 0.5);
+		transition: 0.5s 0s ease all;
+	}
+
+	#m-travel {
+		margin-top: 50px;
+	}
+
+	#m-travel #buttonWithCorners {
+		position: relative;
+		height: 100%;
+		line-height: 1.7em;
+	}
 
 /*выгоды*/
 	#advantage1 {
@@ -148,12 +185,19 @@ body {
 	}
 
 	.advantages .font-weight-bold {
-		font-size: 35px;
-		font-family: Arial;
+		font-size: 45px;
+		font-family: MuseoBold;
 	}
+	
+	#years {
+		font-size: 12px; 
+	}
+
 /*уголочки*/
+	.corner {
+		position: absolute;
+	}
 	.topRightCorner {
-		position: relative;
 		top: 0px;
 		right: 0px;
 		background: transparent;
@@ -163,12 +207,28 @@ body {
 	}
 
 	.bottomLeftCorner {
-		position: relative;
 		bottom: 0px;
 		left: 0px;
 		-webkit-box-shadow: -1px 1px 0px 0px rgb(255, 255, 255);
 		-moz-box-shadow:    -1px 1px 0px 0px rgb(255, 255, 255);
 		box-shadow:         -1px 1px 0px 0px rgb(255, 255, 255);
+	}
+
+	.topLeftCorner {
+		top: 0px;
+		right: 0px;
+		background: transparent;
+		-webkit-box-shadow: -1px -1px 0px 0px rgb(255, 255, 255);
+		-moz-box-shadow:    -1px -1px 0px 0px rgb(255, 255, 255);
+		box-shadow:         -1px -1px 0px 0px rgb(255, 255, 255);
+	}
+
+	.bottomRightCorner {
+		bottom: 0px;
+		right: 0px;
+		-webkit-box-shadow: 1px 1px 0px 0px rgb(255, 255, 255);
+		-moz-box-shadow:    1px 1px 0px 0px rgb(255, 255, 255);
+		box-shadow:         1px 1px 0px 0px rgb(255, 255, 255);
 	}
 
 	.smallCorner {
@@ -180,162 +240,93 @@ body {
 		width: 7px;
 		height: 7px;
 	}
+
 /*уголочки кнопки*/
-	#travel .topRightCorner {
-		top: -1px;
-		right: -165px;
-	}
 
-	#travel .bottomLeftCorner {
-		bottom: -1px;
-		left: -8px;
-	}
-	#m-travel button .topRightCorner {
-		top: -1px;
-		right: -165px;
-	}
-
-	#m-travel button .bottomLeftCorner {
-		bottom: -1px;
-		left: -8px;
-	}
 /*уголочки логотипа*/
-	#logoWrapper .topRightCorner {
-		top: -1px;
-		right: -107%;
+	#logoWithCorners .topRightCorner {
+	right: 0px;
+		top: 0px;
 	}
-
-	#logoWrapper .bottomLeftCorner {
+	#logoWithCorners .topLeftCorner {
+		left: 0px;
+		top: 0px;
+	}
+	#logoWithCorners .bottomRightCorner {
+		right: 0px;
 		bottom: 1px;
-		left: -9.5%;
+	}
+	#logoWithCorners .bottomLeftCorner {
+		left: 0px;
+		bottom: 1px;
 	}
 
-	@media (max-width: 1199px){
-		#logoWrapper .topRightCorner {
-			top: -1px;
-			right: -109%;
+/*адаптив*/
+	@media (max-width: 991px){
+		.logo img {
+		 	width: 100%;
 		}
-
-		#logoWrapper .bottomLeftCorner {
-			bottom: 1px;
-			left: -11.5%;
+		#navbar a span {
+			font-size: 12px;
 		}
 	}
 
-@media (max-width: 991px){
-	.logo img {
-	 	width: 100%;
-	}
-	#navbar a span {
-		font-size: 12px;
-	}
-	#logoWrapper .topRightCorner {
-		top: -1px;
-		right: -114%;
-	}
-	#logoWrapper .bottomLeftCorner {
-		bottom: 1px;
-		left: -18.5%;
-	}
-}
-
-@media (max-width: 767px){
-	#travel {
-		font-size: 12px;
-		width: unset;
-	}
-	#navbar a span {
-		font-size: 18px;
-	}
-	#navbar {
-		background-color: black;
-		z-index: 100;
-		width: 50%;
-		overflow: visible;
-	}
-	#logoWrapper .topRightCorner {
-		top: -1px;
-		right: -108%;
-	}
-	#logoWrapper .bottomLeftCorner {
-		bottom: 1px;
-		left: -9.8%;
-	}
-	#travel .topRightCorner {
-		top: -2px;
-		right: -116px;
+	@media (max-width: 767px){
+		#travel {
+			font-size: 12px;
+			width: unset;
+		}
+		#navbar a span {
+			font-size: 18px;
+		}
+		#navbar {
+			background-color: black;
+			z-index: 100;
+			width: 50%;
+			overflow: visible;
+		}
 	}
 
-	#travel .bottomLeftCorner {
-		bottom: -3px;
-		left: -8px;
+	@media (max-width: 715px){
+		.content {
+			background-position: 40%;
+		}
 	}
-}
 
-@media (max-width: 715px){
-	.content {
-		background-position: 40%;
+	@media (max-width: 575px){
+		.top {
+			background-size: unset;
+		}
+		.content {
+			background-position: 60% 0;
+			background-size: auto;
+			height: 100%;
+			/*padding: 0;*/
+		}
+		#travel {
+			display: none;
+		}
+		#m-travel {
+			display: block !important;
+		}
+		#m-travel button {
+			position: unset;
+			margin: auto;
+			display: block;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		.advantages {
+			width: 45%;
+			background: rgba(255, 255, 255, 0.1);
+		}
+		.logo {
+			width: 50%;
+		}
 	}
-}
 
-@media (max-width: 575px){
-	.top {
-		background-size: unset;
+	@media (max-width: 411px){
+		#navbar button {
+			padding-right: 0px;
+			padding-left: 0px;
+		}
 	}
-	.content {
-		background-position: 60% 0;
-		background-size: auto;
-		height: 100%;
-		/*padding: 0;*/
-	}
-	#travel {
-		display: none;
-	}
-	#m-travel {
-		display: block !important;
-	}
-	#m-travel button {
-		position: unset;
-		margin: auto;
-		display: block;
-		background-color: rgba(0, 0, 0, 0.5);
-	}
-	.advantages {
-		width: 45%;
-		background: rgba(255, 255, 255, 0.1);
-	}
-	.logo {
-		width: 50%;
-	}
-}
-
-@media (max-width: 411px){
-	#navbar button {
-		padding-right: 0px;
-		padding-left: 0px;
-	}
-	#logoWrapper .topRightCorner {
-		top: -1px;
-		right: -112%;
-	}
-	#logoWrapper .bottomLeftCorner {
-		bottom: 1px;
-		left: -15.9%;
-	}
-}
-
-.navbar-toggler-icon {
-	font-size: 28px;
-	line-height: 18px;
-	height: 1em;
-	width: 1em;
-	font-weight: lighter;
-}
-
-/*bootstrap fix lol*/
-[aria-expanded="true"] {
-	display: block !important;
-}
-#years {
-	font-size: 12px; 
-}
